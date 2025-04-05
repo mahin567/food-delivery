@@ -1,142 +1,203 @@
-/* General Styles */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #000;
+    --header-bg: #f8fff9;
+    --header-text: rgb(10, 7, 7);
+    --nav-bg: #0e0303;
+    --nav-text: rgb(248, 240, 240);
+    --section-bg: white;
+    --section-shadow: rgba(0, 0, 0, 0.1);
+    --footer-bg: #0f0909;
+    --footer-text: #0a0202;
+    --input-bg: #e4dbdb;
+    --input-text: #110909;
+    --button-bg: #4CAF50;
+    --button-text: rgba(12, 0, 0, 0.904);
+    --button-border: #3e8e41;
+    --card-bg: #f5f5f5;
+    --card-text: #000;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.hidden {
-  display: none;
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px;
+    text-align: center;
 }
 
-
-.landing-page {
-  text-align: center;
-  padding: 20px;
+.status {
+    margin-top: 5px;
+    font-size: 14px;
 }
 
-.landing-page h1 {
-  font-size: 2.5em;
-  color: #4CAF50;
-  margin-bottom: 10px;
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--nav-bg);
 }
 
-.landing-page p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #555;
+nav a {
+    color: var(--nav-text);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
 }
 
-.landing-page .options button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  margin: 5px;
-  cursor: pointer;
+nav a:hover {
+    background-color: #575656;
 }
 
-.landing-page .options button:hover {
-  background-color: #45a049;
+.container {
+    padding: 20px;
 }
 
-/* Form Container */
-.form-container {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
+.section {
+    background: var(--section-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px var(--section-shadow);
 }
 
-h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
+.section h2 {
+    margin-top: 0;
+    color: var(--text-color);
 }
 
-.form-group {
-  margin-bottom: 15px;
+.orders-list,
+.menu-list,
+.delivery-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #555;
+.order, .menu-item, .delivery-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: var(--card-text);
 }
 
-.form-group input {
-  width: 94%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
+.order button,
+.menu-item button,
+.delivery-item button {
+    padding: 5px;
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
 }
 
-.primary-btn {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  width: 100%;
+.order button.accept {
+    background-color: #4CAF50;
 }
 
-.primary-btn:hover {
-  background-color: #45a049;
+.order button.reject {
+    background-color: #f44336;
 }
 
-p {
-  font-size: 0.9em;
-  text-align: center;
-  margin: 10px 0;
+.delivery-item button {
+    background-color: #4CAF50;
 }
 
-p a {
-  color: #4CAF50;
-  text-decoration: none;
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    margin-top: 20px;
 }
 
-p a:hover {
-  text-decoration: underline;
+.settings-item {
+    margin: 10px 0;
 }
 
-/* Loading Screen */
-.loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
+.settings-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
 }
 
-.spinner {
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #4CAF50;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin-top: 20px;
+.settings-item input, .settings-item select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
 }
 
-@keyframes spin {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
+.settings-item button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.settings-item button:hover {
+    background-color: #45a049;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #1e1e1e;
+    --header-text: #e0e0e0;
+    --nav-bg: #1e1e1e;
+    --nav-text: #e0e0e0;
+    --section-bg: #2b2b2b;
+    --section-shadow: rgba(255, 255, 255, 0.1);
+    --footer-bg: #1e1e1e;
+    --footer-text: #e0e0e0;
+    --input-bg: #333;
+    --input-text: #e0e0e0;
+    --button-bg: #444;
+    --button-text: #e0e0e0;
+    --button-border: #555;
+    --card-bg: #333;
+    --card-text: #0c0808;
+}
+
+.dark-mode nav a {
+    color: var(--nav-text);
+}
+
+.dark-mode nav a:hover {
+    background-color: #0c0b0b;
+}
+
+.dark-mode .section h2 {
+    color: var(--text-color);
+}
+
+.dark-mode .order, .dark-mode .menu-item, .dark-mode .delivery-item {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+}
+
+.dark-mode .settings-item input,
+.dark-mode .settings-item select {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+}
+
+.dark-mode .settings-item label {
+    color: var(--text-color);
 }

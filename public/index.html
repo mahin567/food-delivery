@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Dashboard</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+<header class="bg-primary text-white text-center py-4">
+  <h1>Restaurant Dashboard</h1>
+  <p class="status mt-2">Status: <strong class="text-success">Open</strong></p>
+</header>
+
+<nav class="nav justify-content-center bg-dark py-2">
+  <a class="nav-link text-white" href="#orders">Orders</a>
+  <a class="nav-link text-white" href="#menu">Menu Management</a>
+  <a class="nav-link text-white" href="#delivery">Delivery</a>
+  <a class="nav-link text-white" href="#analytics">Analytics</a>
+  <a class="nav-link text-white" href="#settings">Settings</a>
+</nav>
+
+<div class="container my-4">
+  <div class="container my-4">
+    <!-- Orders Section -->
+    <div class="mb-5" id="orders">
+      <h2 class="mb-4">Orders Overview</h2>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          John Doe | Pizza, Pasta | $25
+          <div>
+            <button class="btn btn-success btn-sm accept">Accept</button>
+            <button class="btn btn-danger btn-sm reject">Reject</button>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Jane Smith | Cheeseburger, Fries | $18
+          <div>
+            <button class="btn btn-success btn-sm accept">Accept</button>
+            <button class="btn btn-danger btn-sm reject">Reject</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+
+  <!-- Menu Management -->
+   <!-- Menu Management -->
+   <div class="mb-5" id="menu">
+    <h2 class="mb-4">Menu Management</h2>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Grilled Chicken | $12
+        <div>
+          <button class="btn btn-primary btn-sm">Edit</button>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Veggie Burger | $10
+        <div>
+          <button class="btn btn-primary btn-sm">Edit</button>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Delivery Management -->
+  <div class="mb-5" id="delivery">
+    <h2 class="mb-4">Delivery Management</h2>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Order #123 | Delivery to: 123 Main St
+        <button class="btn btn-success btn-sm">Mark as Delivered</button>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Order #124 | Delivery to: 456 Elm St
+        <button class="btn btn-success btn-sm">Mark as Delivered</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Analytics -->
+  <div class="mb-5" id="analytics">
+    <h2 class="mb-4">Analytics & Insights</h2>
+    <p>Total Sales Today: <strong>$200</strong></p>
+    <p>Orders Completed: <strong>15</strong></p>
+    <p>Most Ordered Items:</p>
+    <ol>
+      <li>Pizza</li>
+      <li>Cheeseburger</li>
+    </ol>
+  </div>
+
+  <!-- Settings -->
+  <div id="settings">
+    <h2 class="mb-4">Settings</h2>
+    <form>
+      <div class="mb-3">
+        <label for="restaurant-name" class="form-label">Restaurant Name</label>
+        <input type="text" class="form-control" id="restaurant-name" placeholder="Enter restaurant name">
+      </div>
+      <div class="mb-3">
+        <label for="operating-hours" class="form-label">Operating Hours</label>
+        <input type="text" class="form-control" id="operating-hours" placeholder="e.g., 9:00 AM - 9:00 PM">
+      </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact Information</label>
+        <input type="text" class="form-control" id="contact" placeholder="Enter contact info">
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="dark-mode-toggle">
+        <label class="form-check-label" for="dark-mode-toggle">Dark Mode</label>
+      </div>
+      <button type="button" class="btn btn-primary mt-3">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<footer class="text-center bg-dark text-white py-3 mt-4">
+  Restaurant Dashboard &copy; 2025
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Dark Mode
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  darkModeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('bg-dark', darkModeToggle.checked);
+    document.body.classList.toggle('text-white', darkModeToggle.checked);
+  });
+
+  // Fetch orders from the API
+  function fetchOrders() {
+    fetch('http://localhost:3001/api/orders')
+      .then(response => response.json())
+      .then(data => {
+        const ordersList = document.getElementById('orders-list');
+        ordersList.innerHTML = ''; // Clear previous list
+        data.forEach(order => {
+          const li = document.createElement('li');
+          li.classList.add('list-group-item');
+          li.classList.add('d-flex');
+          li.classList.add('justify-content-between');
+          li.classList.add('align-items-center');
+          li.innerHTML = `${order.customer} | ${order.items.join(', ')} | $${order.total} <div><button class="btn btn-success btn-sm accept">Accept</button><button class="btn btn-danger btn-sm reject">Reject</button></div>`;
+          ordersList.appendChild(li);
+
+          // Add event listeners for accept/reject buttons
+          const acceptBtn = li.querySelector('.accept');
+          const rejectBtn = li.querySelector('.reject');
+          
+          acceptBtn.addEventListener('click', () => updateOrderStatus(order.id, 'Accepted'));
+          rejectBtn.addEventListener('click', () => updateOrderStatus(order.id, 'Rejected'));
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching orders:', error);
+      });
+  }
+
+  // Update order status
+  function updateOrderStatus(orderId, status) {
+    fetch(`http://localhost:3001/api/orders/${orderId}/status`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status }),
+    })
+    .then(response => response.json())
+    .then(updatedOrder => {
+      console.log('Order updated:', updatedOrder);
+      fetchOrders(); // Re-fetch orders after status update
+    })
+    .catch(error => {
+      console.error('Error updating order status:', error);
+    });
+  }
+
+  // Fetch menu items from the API
+  function fetchMenu() {
+    fetch('http://localhost:3001/api/menu')
+      .then(response => response.json())
+      .then(data => {
+        const menuList = document.getElementById('menu-list');
+        menuList.innerHTML = ''; // Clear previous menu
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.classList.add('list-group-item');
+          li.classList.add('d-flex');
+          li.classList.add('justify-content-between');
+          li.classList.add('align-items-center');
+          li.innerHTML = `${item.name} | $${item.price} <div><button class="btn btn-primary btn-sm edit">Edit</button><button class="btn btn-danger btn-sm delete">Delete</button></div>`;
+          menuList.appendChild(li);
+
+          // Add event listeners for edit/delete buttons
+          const editBtn = li.querySelector('.edit');
+          const deleteBtn = li.querySelector('.delete');
+
+          editBtn.addEventListener('click', () => editMenuItem(item.id));
+          deleteBtn.addEventListener('click', () => deleteMenuItem(item.id));
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching menu:', error);
+      });
+  }
+
+  // Edit menu item
+  function editMenuItem(itemId) {
+    const newName = prompt('Enter new menu item name:');
+    const newPrice = prompt('Enter new menu item price:');
+    
+    fetch(`http://localhost:3001/api/menu/${itemId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: newName, price: newPrice }),
+    })
+    .then(response => response.json())
+    .then(updatedItem => {
+      console.log('Menu item updated:', updatedItem);
+      fetchMenu(); // Re-fetch menu after update
+    })
+    .catch(error => {
+      console.error('Error editing menu item:', error);
+    });
+  }
+
+  // Delete menu item
+  function deleteMenuItem(itemId) {
+    fetch(`http://localhost:3001/api/menu/${itemId}`, {
+      method: 'DELETE',
+    })
+    .then(() => {
+      console.log('Menu item deleted');
+      fetchMenu(); // Re-fetch menu after delete
+    })
+    .catch(error => {
+      console.error('Error deleting menu item:', error);
+    });
+  }
+
+  // Fetch data when the page loads
+  document.addEventListener('DOMContentLoaded', function () {
+    fetchOrders();
+    fetchMenu();
+  });
+</script>
+</body>
+</html>
