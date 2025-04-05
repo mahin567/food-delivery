@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    background: #f5f5f5;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.header p {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.section {
+    padding: 16px;
+}
+
+.section h2 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.card img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.card p {
+    margin: 0;
+    flex-grow: 1;
+    margin-left: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.card small {
+    display: block;
+    font-size: 12px;
+    color: #888;
+}
+
+.card .add-button {
+    color: #f76a24;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order-summary {
+    background: #f8f9fa;
+    padding: 16px;
+    border-top: 1px solid #ddd;
+}
+
+.order-summary p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.apply-button {
+    background: #f76a24;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.apply-button:hover {
+    background: #e65c19;
+}
+
+.dark-mode {
+    background-color: #0c0a0a;
+    color: #362e2e;
+
+}
+
+.dark-mode .container {
+    background: #141313;
+}
+
+.dark-mode .card {
+    border-color: #0e0c0c;
+    background-color: #110f0f;
+}
+
+.dark-mode .card p {
+    color: #f3eded;
+}
+
+.dark-mode .add-button {
+    color: #ffa67a;
+}
+
+.toggle-switch {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-switch label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: #080808;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-switch label::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle-switch input:checked + label {
+    background: #ff6f61;
+}
+
+.toggle-switch input:checked + label::after {
+    left: 27px;
+}
