@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mad chefs</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="menu-container">
+    <header class="header">
+      <h1>Mad chef's</h1>
+      <p class="category">Momos &bull; Chinese &bull; Beverages</p>
+      <div class="rating">
+        <span class="rating-score">4.1</span> 
+        <span class="rating-count">117 ratings</span>
+      </div>
+      <p class="delivery-info">35-40 min &bull; 5 km &bull; Sector 43</p>
+      <div class="offer-banner">
+        <span>60% OFF up to ৳120</span>
+        <p>Use code <strong>TRYNEW</strong> | above ৳159</p>
+      </div>
+    </header>
+
+    <section class="filters">
+      <button class="filter veg">Veg</button>
+      <button class="filter non-veg">Non-veg</button>
+      <button class="filter best-seller">Best Seller</button>
+         
+    </section>
+     
+    <section class="recommended">
+      
+       <div class="menu-item">
+        <img src="/p7/image/chili.webp" alt="Chilli Chicken - Dry">
+        <div class="item-details">
+          <h3>Chilli Chicken - Dry (Serves 2)</h3>
+          <p class="price">৳329</p>
+          <p class="rating">12 ratings</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/gh.jpg" alt="Molten Cheese Spring Rolls">
+        <div class="item-details">
+          <h3>Molten Cheese Spring Rolls (6 pcs)</h3>
+          <p class="price">৳329</p>
+          <p class="rating">12 ratings</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/p7/image/vg.webp" alt="Molten Cheese Spring Rolls">
+        <div class="item-details">
+          <h3>VagetableRolls</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="/p7/image/naga Rice.jpg" alt="naga">
+        <div class="item-details">
+          <h3>Achari Rice</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/naga burger.jpg" alt="Burger">
+        <div class="item-details">
+          <h3>Burger (6 pcs)</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/naga pasta.webp" alt="pasta">
+        <div class="item-details">
+          <h3>pasta</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/momos.jpg" alt="momos">
+        <div class="item-details">
+          <h3>MoMos</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/jhl.jpg" alt="chaoumin">
+        <div class="item-details">
+          <h3>chaoumin</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/220px-Bangladeshi_Biryani.jpg" alt="Biryani">
+        <div class="item-details">
+          <h3>Biryani</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/pizza f.jpg" alt="Pizza">
+        <div class="item-details">
+          <h3>pizza</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/default-cake-shops-1.webp" alt="Molten Cheese Spring Rolls">
+        <div class="item-details">
+          <h3>Cake</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/shusi.webp" alt="Molten Cheese Spring Rolls">
+        <div class="item-details">
+          <h3>Sushi</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/iu.webp" alt="Molten Cheese Spring Rolls">
+        <div class="item-details">
+          <h3>Hotdogs</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="/p7/image/hh.webp" alt="Molten Cheese Spring Rolls">
+        <div class="item-details">
+          <h3>FriedRice</h3>
+          <p class="price">৳329</p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+    </section>
+
+
+    <div class="modal hidden">
+      <div class="modal-content">
+        <button class="close-btn">&times;</button>
+        <h2>Customise as per your need</h2>
+        <h3>Type Of Chilli Chicken</h3>
+        <form>
+          <label>
+            <input type="radio" name="chilli-chicken" value="spicy" checked>
+            Chilly Chicken Dry (Spicy) - ৳389
+          </label>
+          <label>
+            <input type="radio" name="chilli-chicken" value="mild-spicy">
+            Chilly Chicken Dry (Mild Spicy) - ৳399
+          </label>
+        </form>
+        <div class="quantity">
+          <button class="quantity-btn" id="decrement">-</button>
+          <span id="quantity">1</span>
+          <button class="quantity-btn" id="increment">+</button>
+        </div>
+        <button class="add-item-btn"></a>Add Item | ৳389</button>
+        <p>buy now</p>
+      </div>
+    </div>
+  </div>
+
+<div class="modal hidden" id="chilli-chicken-modal">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Chilli Chicken</h3>
+      <form>
+        <label>
+          <input type="radio" name="chilli-chicken" value="spicy" checked>
+          Chilly Chicken Dry (Spicy) - ৳389
+        </label>
+        <label>
+          <input type="radio" name="chilli-chicken" value="mild-spicy">
+          Chilly Chicken Dry (Mild Spicy) - ৳399
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳389</button>
+    </div>
+  </div>
+  
+ 
+  <div class="modal hidden" id="molten-cheese-modal">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Molten Cheese Spring Rolls</h3>
+      <form>
+        <label>
+          <input type="radio" name="molten-cheese" value="classic" checked>
+          Classic Spring Rolls - ৳329
+        </label>
+        <label>
+          <input type="radio" name="molten-cheese" value="cheesy">
+          Extra Cheesy Spring Rolls - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+  
+
+  <div class="modal hidden" id="vagetablesroll-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Veg Rolls</h3>
+      <form>
+        <label>
+          <input type="radio" name="vagetablerolls" value="classic" checked>
+          Classic Veg Rolls - ৳329
+        </label>
+        <label>
+          <input type="radio" name="vagetablerolls" value="spicy">
+          Spicy Veg Rolls - ৳339
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+  
+
+  <div class="modal hidden" id="achari-rice-modal">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Achari Rice</h3>
+      <form>
+        <label>
+          <input type="radio" name="achari-rice" value="spicy" checked>
+          Spicy Achari Rice - ৳329
+        </label>
+        <label>
+          <input type="radio" name="achari-rice" value="mild">
+          Mild Achari Rice - ৳339
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+  
+
+  <div class="modal hidden" id="burger-modal">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Burger</h3>
+      <form>
+        <label>
+          <input type="radio" name="burger" value="classic" checked>
+          Classic Burger - ৳329
+        </label>
+        <label>
+          <input type="radio" name="burger" value="cheese">
+          Cheese Burger - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+  
+
+  <div class="modal hidden" id="pasta-modal">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Pasta</h3>
+      <form>
+        <label>
+          <input type="radio" name="pasta" value="classic" checked>
+          Classic Pasta - ৳329
+        </label>
+        <label>
+          <input type="radio" name="pasta" value="creamy">
+          Creamy Pasta - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn"><a href="/p14/index.html">Add Item | ৳329</a></button>
+    </div>
+  </div>
+  
+  <div class="modal hidden" id= "momos-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of momos</h3>
+      <form>
+        <label>
+          <input type="radio" name="momos" value="classic" checked>
+          momos - ৳329
+        </label>
+        <label>
+          <input type="radio" name="momos" value="creamy">
+          naga momos - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="choumin-modal">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>chaoumin</h3>
+      <form>
+        <label>
+          <input type="radio" name="chaoumin" value="classic" checked>
+          Classic chaoumin - ৳329
+        </label>
+        <label>
+          <input type="radio" name="chaoumin" value="creamy">
+          naga chaoumin - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+
+
+  <div class="modal hidden" id="Biryani-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>type of Biryani</h3>
+      <form>
+        <label>
+          <input type="radio" name="biryani" value="classic" checked>
+          Chicken Biryani - ৳329
+        </label>
+        <label>
+          <input type="radio" name="biryani" value="creamy">
+          Mutton Biryani - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="pizza-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Pizza</h3>
+      <form>
+        <label>
+          <input type="radio" name="pizza" value="classic" checked>
+          Vagetable Pizza - ৳329
+        </label>
+        <label>
+          <input type="radio" name="pizza" value="creamy">
+           Mutton pizza - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="cake-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of cake</h3>
+      <form>
+        <label>
+          <input type="radio" name="cake" value="classic" checked>
+          Choclate cake - ৳329
+        </label>
+        <label>
+          <input type="radio" name="cake" value="creamy">
+          vanila Cake - ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="sushi-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of shusi</h3>
+      <form>
+        <label>
+          <input type="radio" name="sushi" value="classic" checked>
+          Vagetable shusi - ৳329
+        </label>
+        <label>
+          <input type="radio" name="sushi" value="creamy">
+          mutton shusi- ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+ 
+  <div class="modal hidden" id="hotdogs-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of hotdogs</h3>
+      <form>
+        <label>
+          <input type="radio" name="hotdogs" value="classic" checked>
+          Classic hotdogs- ৳329
+        </label>
+        <label>
+          <input type="radio" name="hotdogs" value="creamy">
+          naga hotdogs- ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="friedrice-model">
+    <div class="modal-content">
+      <button class="close-btn">&times;</button>
+      <h2>Customise as per your need</h2>
+      <h3>Type Of Fried Rice</h3>
+      <form>
+        <label>
+          <input type="radio" name="friedrice" value="classic" checked>
+          Classic Fried Rice - ৳329
+        </label>
+        <label>
+          <input type="radio" name="friedrice" value="creamy">
+          naga Fried rice- ৳349
+        </label>
+      </form>
+      <div class="quantity">
+        <button class="quantity-btn" id="decrement">-</button>
+        <span id="quantity">1</span>
+        <button class="quantity-btn" id="increment">+</button>
+      </div>
+      <button class="add-item-btn">Add Item | ৳329</button>
+    </div>
+  </div>
+  
+  
+</body>
+</html>
