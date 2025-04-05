@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store and Delivery Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #343a40;
+        }
+        div {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .star {
+            font-size: 32px;
+            cursor: pointer;
+            color: lightgray;
+        }
+        .star.selected {
+            color: gold;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            font-size: 16px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Food Store Feedback -->
+    <div id="food-store">
+        <h2>Feedback for Food Store</h2>
+        <p>How was your meal? Chicken Momo from Hong's Kitchen</p>
+        <div id="food-rating">
+            <span class="star" onclick="setFoodRating(1)">★</span>
+            <span class="star" onclick="setFoodRating(2)">★</span>
+            <span class="star" onclick="setFoodRating(3)">★</span>
+            <span class="star" onclick="setFoodRating(4)">★</span>
+            <span class="star" onclick="setFoodRating(5)">★</span>
+        </div>
+        <button onclick="submitFoodRating()">Next</button>
+        <p id="food-feedback"></p>
+    </div>
+
+    <!-- Delivery Person Feedback -->
+    <div id="delivery-person">
+        <h2>Feedback for Delivery Person</h2>
+        <p>How would you rate your rider?</p>
+        <div id="rider-rating">
+            <span class="star" onclick="setRiderRating(1)">★</span>
+            <span class="star" onclick="setRiderRating(2)">★</span>
+            <span class="star" onclick="setRiderRating(3)">★</span>
+            <span class="star" onclick="setRiderRating(4)">★</span>
+            <span class="star" onclick="setRiderRating(5)">★</span>
+        </div>
+        <button onclick="submitRiderRating()">Next</button>
+        <p id="rider-feedback"></p>
+    </div>
+
+    <script>
+        let foodRating = 0;
+        let riderRating = 0;
+
+        function setFoodRating(rating) {
+            foodRating = rating;
+            updateStars("food-rating", rating);
+        }
+
+        function setRiderRating(rating) {
+            riderRating = rating;
+            updateStars("rider-rating", rating);
+        }
+
+        function updateStars(containerId, rating) {
+            const stars = document.getElementById(containerId).getElementsByClassName("star");
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].classList.toggle("selected", i < rating);
+            }
+        }
+
+        function submitFoodRating() {
+            document.getElementById("food-feedback").innerText = "Food rating submitted: " + foodRating;
+        }
+
+        function submitRiderRating() {
+            document.getElementById("rider-feedback").innerText = "Rider rating submitted: " + riderRating;
+        }
+    </script>
+
+</body>
+</html>

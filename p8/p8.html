@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery UI</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header .location {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .header .location img {
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .header .plus {
+            background-color: #ff7e29;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Search Section */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .search-bar svg {
+            width: 20px;
+            height: 20px;
+            fill: #888;
+        }
+
+        /* Offers Section */
+        .offers {
+            background-color: #ffeccc;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .offers img {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            opacity: 0.8;
+        }
+
+        .offers h2 {
+            font-size: 20px;
+            color: #ff7e29;
+        }
+
+        /* Categories Section */
+        .categories {
+            margin-bottom: 20px;
+        }
+
+        .categories h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .categories .category-list {
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .categories .category-item {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 10px;
+            text-align: center;
+            flex-shrink: 0;
+            width: 80px;
+        }
+
+        .categories .category-item img {
+            width: 40px;
+            margin-bottom: 5px;
+        }
+
+        /* Restaurants Section */
+        .restaurants {
+            margin-bottom: 20px;
+        }
+
+        .restaurants h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .restaurants .restaurant-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .restaurants .restaurant-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .restaurants .restaurant-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .restaurants .restaurant-info .rating {
+            background-color: #ff7e29;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="location">
+                <img src="https://img.icons8.com/ios-filled/50/000000/place-marker.png" alt="Location">
+                <span>Chef's Table Countryside</span>
+            </div>
+            <div class="plus">Plus</div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Pizza">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M10 2a8 8 0 106.32 13.71l4.29 4.3a1 1 0 001.42-1.42l-4.3-4.29A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"></path>
+            </svg>
+        </div>
+
+        <!-- Offers Section -->
+        <div class="offers">
+            <h2>Explosive Offers for you</h2>
+            <img src="https://via.placeholder.com/50/FF7E29/FFFFFF?text=O" alt="Offer">
+        </div>
+
+        <!-- Categories Section -->
+        <div class="categories">
+            <h3>What's on your mind</h3>
+            <div class="category-list">
+                <div class="category-item">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/pizza.png" alt="Pizza">
+                    <span>Pizza</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/hamburger.png" alt="Burger">
+                    <span>Burger</span>
+                </div>
+                <div class="category-item">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/rice-bowl.png" alt="Biryani">
+                    <span>Biryani</span>
+                </div>
+                <!-- Add more categories here -->
+            </div>
+        </div>
+
+        <!-- Restaurants Section -->
+        <div class="restaurants">
+            <h3>All Restaurants</h3>
+            <div class="restaurant-card">
+                <img src="https://via.placeholder.com/400x200" alt="Restaurant Image">
+                <div class="restaurant-info">
+                    <h4>Hong's Momos</h4>
+                    <span class="rating">4.5</span>
+                </div>
+                <p>Momos · Chinese · 1.2 km away</p>
+                <p><strong>60% OFF</strong> up to ₹250</p>
+            </div>
+            <!-- Add more restaurant cards here -->
+        </div>
+    </div>
+</body>
+</html>

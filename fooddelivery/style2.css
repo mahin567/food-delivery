@@ -1,0 +1,162 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2; /* Off-white background */
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Page Container */
+.page-container {
+  width: 100%;
+  max-width: 1000px; /* Wider for desktop */
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Header Section */
+.header {
+  background-color: #001f5b;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.header h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.header .plus {
+  background: #ff8000;
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 5px;
+}
+
+.header .small-text {
+  font-size: 1em;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.free-button {
+  background-color: #ff8000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.free-button:hover {
+  background-color: #e06900;
+}
+
+/* Perks Section */
+.perks-section {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.perks-section h3 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #001f5b;
+}
+
+/* Grid for Perks */
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.perk img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.perk h4 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.perk p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.footer p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.try-button {
+  background-color: #ff8000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.try-button:hover {
+  background-color: #e06900;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perk img {
+    width: 40px;
+    height: 40px;
+  }
+}

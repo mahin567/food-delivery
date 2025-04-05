@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div class="landing-page">
+        <h1>Welcome to Foodie</h1>
+        <p>Your gateway to connecting restaurants and customers effortlessly.</p>
+        <div class="options">
+            <button onclick="window.location.href='login.html?type=restaurant'">Restaurant Owner</button>
+            <button onclick="window.location.href='login.html?type=customer'"><a href="/P6Update/index1.html">Customer</a></button>
+        </div>
+    </div>
+
+    
+    <div id="login-page" class="hidden">
+        <div class="form-container">
+            <h2 id="login-title">Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="primary-btn"><a href="/p12/public/index.html">Login</a></button>
+                <p><a href="#">Forgot Password?</a></p>
+                <p>New here? <a id="switch-to-register" href="#">Register now</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="registration-page" class="hidden">
+        <div class="form-container">
+            <h2 id="registration-title">Register</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div id="business-info" class="hidden">
+                    <div class="form-group">
+                        <label for="business-name">Business Name:</label>
+                        <input type="text" id="business-name" name="business-name" placeholder="Enter your business name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business-address">Business Address:</label>
+                        <input type="text" id="business-address" name="business-address" placeholder="Enter your business address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business-license">Upload Business License:</label>
+                        <input type="file" id="business-license" name="business-license" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="otp">Enter OTP sent to your email:</label>
+                        <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+
+                <button type="submit" class="primary-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loading-screen" class="hidden">
+        <div class="loading-container">
+            <p>Publishing your information, please wait...</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const userType = urlParams.get('type');
+        const loginPage = document.getElementById('login-page');
+        const registrationPage = document.getElementById('registration-page');
+        const businessInfo = document.getElementById('business-info');
+
+        if (userType === 'restaurant') {
+            document.getElementById('registration-title').innerText = 'Register as a Restaurant Owner';
+            businessInfo.classList.remove('hidden');
+        } else if (userType === 'customer') {
+            document.getElementById('registration-title').innerText = 'Register as a Customer';
+            businessInfo.classList.add('hidden');
+        }
+
+  
+        loginPage.classList.remove('hidden');
+
+        document.getElementById('switch-to-register').addEventListener('click', () => {
+            loginPage.classList.add('hidden');
+            registrationPage.classList.remove('hidden');
+        });
+
+       
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            loginPage.classList.add('hidden');
+            document.getElementById('loading-screen').classList.remove('hidden');
+            setTimeout(() => {
+                alert('Your information has been published! Redirecting to dashboard...');
+                window.location.href = 'dashboard.html';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
