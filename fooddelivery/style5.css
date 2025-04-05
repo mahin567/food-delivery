@@ -1,0 +1,108 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+/* Coupon Card */
+.coupon-card {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  margin: 20px;
+}
+
+.card-content h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.discount-amount {
+  font-weight: bold;
+  color: #E91E63;
+}
+
+.continue-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.continue-button:hover {
+  background-color: #45a049;
+}
+
+/* Confetti Animation */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #E91E63;
+  border-radius: 50%;
+  animation: confetti-fall 3s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coupon-card {
+    padding: 15px;
+  }
+
+  .card-content h2 {
+    font-size: 1.5em;
+  }
+
+  .card-content p {
+    font-size: 1em;
+  }
+
+  .continue-button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+}
